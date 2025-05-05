@@ -1,17 +1,29 @@
-# add project name here  <img src='https://21centuryweather.org.au/wp-content/uploads/Hackathon-Image-WCRP-Positive-1536x736.jpg' align="right" height="139" />
+# Convectively-Coupled Systems in the Tropics as Simulated in Global Storm Resolving Models <img src='https://21centuryweather.org.au/wp-content/uploads/Hackathon-Image-WCRP-Positive-1536x736.jpg' align="right" height="139"/>
 
-Project description, please include the main idea and questions that motivate the project.
+Convectively-coupled large-scale systems in the tropics can be categorised into: 1) slow moving moisture modes, 2) fast moving inertio-gravity waves, and 3) mixed systems in between. This is the _**moisture mode-to-gravity wave spectrum**_ framework (see [Adames et al 2019](https://doi.org/10.1175/JAS-D-19-0121.1) and [Adames 2022](https://doi.org/10.1175/JAS-D-21-0215.1)). Moisture mode controls the convection through moistening the tropospheric column, while inertio-gravity wave alters the low-level buoyancy to trigger convection. This project is aimed to find out whether this distinction in how large-scale tropical systems govern the convection is well simulated by the km-scale models.
 
+More details can be found [here](https://github.com/21centuryweather/hk25-teams/blob/main/hk25-AusNode/hk25-AusNode-ConvTrop.md).
 
-**Project leads:** name, affiliation/github username
+**Project leads:**
 
-**Project members:** name, affiliation/github username
+Martin Singh, Monash University
 
-**Collaborators:** list here other collaborators to the project.
+[Reyhan Respati](mailto:reyhan.respati@monash.edu), Monash University
+
+**Project members:**
+
+name, affiliation/github username
+
+**Collaborators:**
+
+* [hk25-Cyclones](https://github.com/21centuryweather/hk25-teams/blob/main/hk25-AusNode/hk25-AusNode-Cyclones.md)'s works may be useful as we need to exclude tropical cyclones in the analysis.
 
 **Data:**
-* Name, link
-* Name, link
+
+* Simulation outputs: rlut, pr, ua, va, wa, zg, ta, hus
+* Observation datasets: ERA5 (same variables as above), GPM-IMERG precipitation
+* Domain: global tropics (30S-30N)
+* Time resolution: 3-hourly if possible
 
 ## Contributing Guidelines
 
