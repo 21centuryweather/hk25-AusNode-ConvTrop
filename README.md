@@ -27,9 +27,23 @@ name, affiliation/github username
 
 ## Contributing Guidelines
 
-> The group will decide how to work as a team. This is only an example. 
+> Lorem ipsum dolor sit amet 
 
-This section outlines the guidelines to ensure everyone can work and collaborate. All project members have write access to this repository, to avoid overlapping and merge issues make sure you discuss the plan and any changes to existing code or analysis.
+A python virtual environment has been set up for working on this project. To use the virtual environment, run the following commands everytime you log into `gadi`.
+
+```
+module use /g/data/xp65/public/modules
+module load conda/analysis3-25.02
+source /scratch/gb02/mr4682/tobac_env/bin/activate
+```
+
+To close the virtual environment, run this command.
+
+```
+deactivate
+```
+
+This virtual environment contains all the necessary packages for this project, including `healpy`, `easygems`, and [`tobac`](https://tobac.readthedocs.io/en/latest/), as well as the fundamental libraries like `numpy` and `xarray`.
 
 ### Project organisation
 
