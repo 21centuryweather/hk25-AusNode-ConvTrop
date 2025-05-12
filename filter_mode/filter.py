@@ -1,8 +1,93 @@
 import numpy as np
 import pandas as pd
 import xarray as xr
+from glob import glob
+
+from config import *
 
 # For all functions defined below, TLL means 3D shaped (time, lat, lon) and TLLL means 4D shaped (time, lev, lat, lon)
+
+def remove_tc_TLL(x, time, lat, lon):
+    y = np.copy(x.data)
+    
+    lon2d, lat2d = np.meshgrid(lon.data, lat.data)
+    
+    f = xr.open_dataset(str(IBTrACS_FILE))
+    
+    time_tc = f["time"]
+    lat_tc = f["lat"]
+    lon_tc = f["lon"]
+    
+    storm = f["storm"]
+    
+    for i in range(0, len(storm)):
+        time_tc_i = time_tc[i, :].values
+        len_time_tc_i = len(time_tc_i) - np.count_nonzero(np.isnan(time_tc_i))
+        
+        if ((time_tc_i[0] >= time.values[0]) & (time_tc_i[0] <= time.values[-1])) | ((time_tc_i[len_time_tc_i - 1] >= time.values[0]) & (time_tc_i[len_time_tc_i - 1] <= time.values[-1])):
+            time_tc_i_list = np.asarray([], dtype=np.datetime64)
+            for n in range(0, len_time_tc_i):
+                time_tc_i_n = np.datetime64(np.datetime_as_string(time_tc_i[n], unit="s"))
+                
+                if (time_tc_i_n in time.values) & (time_tc_i_n not in time_tc_i_list):
+                    time_tc_i_list = np.append(time_tc_i_list, time_tc_i_n)
+                    
+                    lat_tc_i_n = lat_tc[i, n].values
+                    lon_tc_i_n = lon_tc[i, n].values
+                    
+                    c = np.sin(np.radians(lat2d)) * np.sin(np.radians(lat_tc_i_n)) + np.cos(np.radians(lat2d)) * np.cos(np.radians(lat_tc_i_n)) * np.cos(np.radians(lon2d - lon_tc_i_n))
+                    c = np.where((c >= -1) & (c <= 1), c, np.nan)
+                    
+                    r = np.arccos(c) * 6371
+                    
+                    w = 1 - np.exp(-(r / 500) * (r / 500) * np.log(4) / 2)
+                    
+                    y[time.values == time_tc_i_n, :, :] = y[time.values == time_tc_i_n, :, :] * w
+    
+    y = xr.DataArray(y, dims=x.dims, coords=x.coords, attrs=x.attrs)
+    
+    return y
+
+def remove_tc_TLLL(x, time, lat, lon):
+    y = np.copy(x.data)
+
+    lon2d, lat2d = np.meshgrid(lon.data, lat.data)
+
+    f = xr.open_dataset(str(IBTrACS_FILE))
+
+    time_tc = f["time"]
+    lat_tc = f["lat"]
+    lon_tc = f["lon"]
+
+    storm = f["storm"]
+
+    for i in range(0, len(storm)):
+        time_tc_i = time_tc[i, :].values
+        len_time_tc_i = len(time_tc_i) - np.count_nonzero(np.isnan(time_tc_i))
+
+        if ((time_tc_i[0] >= time.values[0]) & (time_tc_i[0] <= time.values[-1])) | ((time_tc_i[len_time_tc_i - 1] >= time.values[0]) & (time_tc_i[len_time_tc_i - 1] <= time.values[-1])):
+            time_tc_i_list = np.asarray([], dtype=np.datetime64)
+            for n in range(0, len_time_tc_i):
+                time_tc_i_n = np.datetime64(np.datetime_as_string(time_tc_i[n], unit="s"))
+
+                if (time_tc_i_n in time.values) & (time_tc_i_n not in time_tc_i_list):
+                    time_tc_i_list = np.append(time_tc_i_list, time_tc_i_n)
+
+                    lat_tc_i_n = lat_tc[i, n].values
+                    lon_tc_i_n = lon_tc[i, n].values
+
+                    c = np.sin(np.radians(lat2d)) * np.sin(np.radians(lat_tc_i_n)) + np.cos(np.radians(lat2d)) * np.cos(np.radians(lat_tc_i_n)) * np.cos(np.radians(lon2d - lon_tc_i_n))
+                    c = np.where((c >= -1) & (c <= 1), c, np.nan)
+
+                    r = np.arccos(c) * 6371
+
+                    w = 1 - np.exp(-(r / 500) * (r / 500) * np.log(4) / 2)
+
+                    y[time.values == time_tc_i_n, :, :, :] = y[time.values == time_tc_i_n, :, :, :] * w
+
+    y = xr.DataArray(y, dims=x.dims, coords=x.coords, attrs=x.attrs)
+
+    return y
 
 def calcfft2dfTLL(x, alpha=0.1, norm="forward"):    # Calculate forward 2D FFT (i.e., from temporal space to spectral space)
     # alpha is the proportion of data to be tapered (alpha = 0.1 means 5% at the beginning and 5% at the end of data is tapered to zero)
