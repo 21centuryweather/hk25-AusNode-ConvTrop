@@ -22,7 +22,7 @@ def calc_anom_olr(files, var_name, spd):
     else:
         sys.exit("No .nc files are found!")
 
-    olr = ds[var_name].sel(time=slice("2020-03-01 00:00:00", "2021-02-28 21:00:00"))
+    olr = ds[var_name]
 
     print(olr)
 
