@@ -8,11 +8,11 @@ from config import *
 
 import filter_mode
 
-files = sorted(glob("/scratch/gb02/mr4682/data/regridded/ICON/olr.zoom10.to.0p25deg.nc"))
-var_name = "rlut"
+files = sorted(glob("/scratch/gb02/mr4682/data/txuptp/txuptp.*.nc"))
+var_name = "txuptp"
 spd = 8
 
-fileo = "/scratch/gb02/mr4682/data/regridded/ICON/olr.anom.zoom10.to.0p25deg.nc"
+fileo = "/scratch/gb02/mr4682/data/txuptp/anom/txuptp.anom.nc"
 
 def calc_anom_olr(files, var_name, spd):
     if len(files) == 1:
@@ -22,15 +22,17 @@ def calc_anom_olr(files, var_name, spd):
     else:
         sys.exit("No .nc files are found!")
 
-    olr = ds[var_name].sel(time=slice("2020-03-01 00:00:00", "2021-02-28 21:00:00"))
+    olr = ds[var_name]
 
     print(olr)
 
     if len(olr.dims) == 3:
-        clim = filter_mode.clim.calcClimTLL(olr.sel(time=slice("2020-01-01 03:00:00", "2021-01-01 00:00:00")), spd=spd, smooth=True, nsmth=4)
+        clim = filter_mode.clim.calcClimTLL(olr, spd=spd)
+        clim = filter_mode.clim.smthClimTLL(clim, spd=spd, nsmth=4)
         anom = filter_mode.anom.calcAnomTLL(olr, clim, spd=spd)
     elif len(olr.dims) == 4:
-        clim = filter_mode.clim.calcClimTLLL(olr.sel(time=slice("2020-01-01 03:00:00", "2021-01-01 00:00:00")), spd=spd, smooth=True, nsmth=4)
+        clim = filter_mode.clim.calcClimTLLL(olr, spd=spd)
+        clim = filter_mode.clim.smthClimTLLL(clim, spd=spd, nsmth=4)
         anom = filter_mode.anom.calcAnomTLLL(olr, clim, spd=spd)
     else:
         sys.exit("Only 3D or 4D arrays are accepted!")
@@ -42,8 +44,8 @@ def calc_anom_olr(files, var_name, spd):
 
 if __name__ == "__main__":
     anom = calc_anom_olr(files, var_name, spd)
-    
+
     dso = xr.Dataset()
     dso[f"{var_name}_anom"] = anom
-    
+
     dso.to_netcdf(path=fileo, format="NETCDF4")

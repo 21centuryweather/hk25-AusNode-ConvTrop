@@ -7,6 +7,59 @@ from config import *
 
 # For all functions defined below, TLL means 3D shaped (time, lat, lon) and TLLL means 4D shaped (time, lev, lat, lon)
 
+def next2n(x):
+    return int(2.0 ** (int(np.log(x) / np.log(2.0)) + 1))
+
+def pad_zeros_TLL(x, spd):
+    ntime = len(x["time"].values)
+    
+    diff = next2n(ntime) - ntime
+    
+    ntime_before = diff // 2
+    
+    
+    if diff % 2 == 0:
+        ntime_after = ntime_before
+    else:
+        ntime_after = diff // 2 + 1
+    
+    time_before = pd.date_range(end=pd.to_datetime(x["time"].values[0])-pd.Timedelta(24 // spd, "h"), periods=ntime_before, freq=f"{24 // spd:d}h")
+    time_after = pd.date_range(start=pd.to_datetime(x["time"].values[ntime-1])+pd.Timedelta(24 // spd, "h"), periods=ntime_after, freq=f"{24 // spd:d}h")
+    
+    time_new = pd.to_datetime(np.concatenate((time_before.values, x["time"].values, time_after.values)))
+    
+    x_new = np.zeros((len(time_new.values), x.shape[1], x.shape[2]))
+    x_new[ntime_before:-ntime_after, :, :] = x.values
+    
+    x_new = xr.DataArray(x_new, dims=x.dims, coords={"time": time_new, x.dims[1]: x[x.dims[1]], x.dims[2]: x[x.dims[2]]}, attrs=x.attrs)
+    
+    return x_new
+
+def pad_zeros_TLLL(x, spd):
+    ntime = len(x["time"].values)
+    
+    diff = next2n(ntime) - ntime
+    
+    ntime_before = diff // 2
+    
+    
+    if diff % 2 == 0:
+        ntime_after = ntime_before
+    else:
+        ntime_after = diff // 2 + 1
+    
+    time_before = pd.date_range(end=pd.to_datetime(x["time"].values[0])-pd.Timedelta(24 // spd, "h"), periods=ntime_before, freq=f"{24 // spd:d}h")
+    time_after = pd.date_range(start=pd.to_datetime(x["time"].values[ntime-1])+pd.Timedelta(24 // spd, "h"), periods=ntime_after, freq=f"{24 // spd:d}h")
+    
+    time_new = pd.to_datetime(np.concatenate((time_before.values, x["time"].values, time_after.values)))
+    
+    x_new = np.zeros((len(time_new.values), x.shape[1], x.shape[2], x.shape[3]))
+    x_new[ntime_before:-ntime_after, :, :, :] = x.values
+    
+    x_new = xr.DataArray(x_new, dims=x.dims, coords={"time": time_new, x.dims[1]: x[x.dims[1]], x.dims[2]: x[x.dims[2]], x.dims[3]: x[x.dims[3]]}, attrs=x.attrs)
+    
+    return x_new
+
 def remove_tc_TLL(x, time, lat, lon):
     y = np.copy(x.data)
     
