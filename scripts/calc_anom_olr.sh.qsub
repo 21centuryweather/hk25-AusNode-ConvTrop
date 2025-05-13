@@ -1,0 +1,17 @@
+#!/bin/bash
+  
+#PBS -l walltime=01:00:00
+#PBS -l mem=60GB
+#PBS -l ncpus=1
+#PBS -l jobfs=1GB
+#PBS -l storage=gdata/hh5+scratch/nf33+scratch/gb02+gdata/qx55+scratch/k10
+#PBS -q normal
+#PBS -P nf33
+#PBS -o /scratch/k10/mr4682/hk25-AusNode-ConvTrop/scripts/calc_anom_olr.out
+#PBS -e /scratch/k10/mr4682/hk25-AusNode-ConvTrop/scripts/calc_anom_olr.err
+
+cd /scratch/k10/mr4682/hk25-AusNode-ConvTrop/
+
+source ./env.sh
+
+python scripts/calc_anom_olr.py
