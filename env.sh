@@ -3,8 +3,9 @@
 # Define some basic environmental variables before launching the suite
 
 # Load the analysis3 conda environment
-module use /g/data/xp65/public/modules
-module load conda/analysis3-25.02
+module use /g/data/hh5/public/modules
+module load conda/analysis3
+source /scratch/nf33/public/hackathon_env/bin/activate
 
 # Root directory for this repo
 export ROOT=/scratch/k10/${USER}/hk25-AusNode-ConvTrop	# Change this to match where you clone this repo

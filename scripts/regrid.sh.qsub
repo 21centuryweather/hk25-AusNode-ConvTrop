@@ -1,0 +1,17 @@
+#!/bin/bash
+  
+#PBS -l walltime=02:00:00
+#PBS -l mem=100GB
+#PBS -l ncpus=4
+#PBS -l jobfs=1GB
+#PBS -l storage=gdata/hh5+scratch/nf33+scratch/gb02+gdata/qx55+scratch/k10
+#PBS -q normal
+#PBS -P nf33
+#PBS -o /scratch/k10/mr4682/hk25-AusNode-ConvTrop/regrid.out
+#PBS -e /scratch/k10/mr4682/hk25-AusNode-ConvTrop/regrid.err
+
+cd /scratch/k10/mr4682/hk25-AusNode-ConvTrop/
+
+source ./env.sh
+
+python examples/regrid.py

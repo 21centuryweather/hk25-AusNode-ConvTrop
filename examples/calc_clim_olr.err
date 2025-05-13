@@ -1,0 +1,64 @@
+INFO:flox:Entering _validate_reindex: reindex is None
+INFO:flox:Leaving _validate_reindex: method = None, returning None
+INFO:flox:_choose_engine: Choosing 'numpy'
+INFO:flox:find_group_cohorts: bitmask sparsity=0.9981785063752276, merge=False, choosing 'map-reduce'
+INFO:flox:_choose_method: method is None
+INFO:flox:_choose_method: choosing preferred_method=map-reduce
+INFO:flox:Entering _validate_reindex: reindex is None
+INFO:flox:Leaving _validate_reindex: reindex is True
+INFO:flox:Entering _validate_reindex: reindex is None
+INFO:flox:Leaving _validate_reindex: method = None, returning None
+INFO:flox:_choose_engine: Choosing 'numpy'
+INFO:flox:find_group_cohorts: bitmask sparsity=0.9981785063752276, merge=False, choosing 'map-reduce'
+INFO:flox:_choose_method: method is None
+INFO:flox:_choose_method: choosing preferred_method=map-reduce
+INFO:flox:Entering _validate_reindex: reindex is None
+INFO:flox:Leaving _validate_reindex: reindex is True
+INFO:flox:Entering _validate_reindex: reindex is None
+INFO:flox:Leaving _validate_reindex: method = None, returning None
+INFO:flox:_choose_engine: Choosing 'numpy'
+INFO:flox:find_group_cohorts: bitmask sparsity=0.9981785063752276, merge=False, choosing 'map-reduce'
+INFO:flox:_choose_method: method is None
+INFO:flox:_choose_method: choosing preferred_method=map-reduce
+INFO:flox:Entering _validate_reindex: reindex is None
+INFO:flox:Leaving _validate_reindex: reindex is True
+INFO:flox:Entering _validate_reindex: reindex is None
+INFO:flox:Leaving _validate_reindex: method = None, returning None
+INFO:flox:_choose_engine: Choosing 'numpy'
+INFO:flox:find_group_cohorts: bitmask sparsity=0.9981785063752276, merge=False, choosing 'map-reduce'
+INFO:flox:_choose_method: method is None
+INFO:flox:_choose_method: choosing preferred_method=map-reduce
+INFO:flox:Entering _validate_reindex: reindex is None
+INFO:flox:Leaving _validate_reindex: reindex is True
+INFO:flox:Entering _validate_reindex: reindex is None
+INFO:flox:Leaving _validate_reindex: method = None, returning None
+INFO:flox:_choose_engine: Choosing 'numpy'
+INFO:flox:find_group_cohorts: bitmask sparsity=0.9981785063752276, merge=False, choosing 'map-reduce'
+INFO:flox:_choose_method: method is None
+INFO:flox:_choose_method: choosing preferred_method=map-reduce
+INFO:flox:Entering _validate_reindex: reindex is None
+INFO:flox:Leaving _validate_reindex: reindex is True
+INFO:flox:Entering _validate_reindex: reindex is None
+INFO:flox:Leaving _validate_reindex: method = None, returning None
+INFO:flox:_choose_engine: Choosing 'numpy'
+INFO:flox:find_group_cohorts: bitmask sparsity=0.9981785063752276, merge=False, choosing 'map-reduce'
+INFO:flox:_choose_method: method is None
+INFO:flox:_choose_method: choosing preferred_method=map-reduce
+INFO:flox:Entering _validate_reindex: reindex is None
+INFO:flox:Leaving _validate_reindex: reindex is True
+INFO:flox:Entering _validate_reindex: reindex is None
+INFO:flox:Leaving _validate_reindex: method = None, returning None
+INFO:flox:_choose_engine: Choosing 'numpy'
+INFO:flox:find_group_cohorts: bitmask sparsity=0.9981785063752276, merge=False, choosing 'map-reduce'
+INFO:flox:_choose_method: method is None
+INFO:flox:_choose_method: choosing preferred_method=map-reduce
+INFO:flox:Entering _validate_reindex: reindex is None
+INFO:flox:Leaving _validate_reindex: reindex is True
+INFO:flox:Entering _validate_reindex: reindex is None
+INFO:flox:Leaving _validate_reindex: method = None, returning None
+INFO:flox:_choose_engine: Choosing 'numpy'
+INFO:flox:find_group_cohorts: bitmask sparsity=0.9981785063752276, merge=False, choosing 'map-reduce'
+INFO:flox:_choose_method: method is None
+INFO:flox:_choose_method: choosing preferred_method=map-reduce
+INFO:flox:Entering _validate_reindex: reindex is None
+INFO:flox:Leaving _validate_reindex: reindex is True
