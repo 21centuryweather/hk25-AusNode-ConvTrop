@@ -1,24 +1,97 @@
-INFO:flox:Entering _validate_reindex: reindex is None
-INFO:flox:Leaving _validate_reindex: method = None, returning None
-INFO:flox:_choose_engine: Choosing 'numpy'
-INFO:flox:Entering _validate_reindex: reindex is None
-INFO:flox:Leaving _validate_reindex: method = None, returning None
-INFO:flox:_choose_engine: Choosing 'numpy'
-INFO:flox:Entering _validate_reindex: reindex is None
-INFO:flox:Leaving _validate_reindex: method = None, returning None
-INFO:flox:_choose_engine: Choosing 'numpy'
-INFO:flox:Entering _validate_reindex: reindex is None
-INFO:flox:Leaving _validate_reindex: method = None, returning None
-INFO:flox:_choose_engine: Choosing 'numpy'
-INFO:flox:Entering _validate_reindex: reindex is None
-INFO:flox:Leaving _validate_reindex: method = None, returning None
-INFO:flox:_choose_engine: Choosing 'numpy'
-INFO:flox:Entering _validate_reindex: reindex is None
-INFO:flox:Leaving _validate_reindex: method = None, returning None
-INFO:flox:_choose_engine: Choosing 'numpy'
-INFO:flox:Entering _validate_reindex: reindex is None
-INFO:flox:Leaving _validate_reindex: method = None, returning None
-INFO:flox:_choose_engine: Choosing 'numpy'
-INFO:flox:Entering _validate_reindex: reindex is None
-INFO:flox:Leaving _validate_reindex: method = None, returning None
-INFO:flox:_choose_engine: Choosing 'numpy'
+/g/data/hh5/public/apps/miniconda3/envs/analysis3-24.04/lib/python3.10/site-packages/xarray/backends/plugins.py:80: RuntimeWarning: Engine 'argo' loading failed:
+/lib64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /g/data/hh5/public/apps/miniconda3/envs/analysis3-24.04/lib/python3.10/site-packages/scipy/optimize/_group_columns.cpython-310-x86_64-linux-gnu.so)
+  warnings.warn(f"Engine {name!r} loading failed:\n{ex}", RuntimeWarning)
+/g/data/hh5/public/apps/miniconda3/envs/analysis3-24.04/lib/python3.10/site-packages/xarray/backends/plugins.py:80: RuntimeWarning: Engine 'cfgrib' loading failed:
+cannot load library '/g/data/hh5/public/apps/miniconda3/envs/analysis3-24.04/lib/libeccodes.so': /lib64/libstdc++.so.6: version `GLIBCXX_3.4.29' not found (required by /g/data/hh5/public/apps/miniconda3/envs/analysis3-24.04/lib/libeccodes.so)
+  warnings.warn(f"Engine {name!r} loading failed:\n{ex}", RuntimeWarning)
+/g/data/hh5/public/apps/miniconda3/envs/analysis3-24.04/lib/python3.10/site-packages/xarray/backends/plugins.py:80: RuntimeWarning: Engine 'cfradial1' loading failed:
+/lib64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /g/data/hh5/public/apps/miniconda3/envs/analysis3-24.04/lib/python3.10/site-packages/pyproj/../../../libproj.so.25)
+  warnings.warn(f"Engine {name!r} loading failed:\n{ex}", RuntimeWarning)
+/g/data/hh5/public/apps/miniconda3/envs/analysis3-24.04/lib/python3.10/site-packages/wavespectra/__init__.py:13: UserWarning: Cannot import accessors at the main module level
+  warnings.warn("Cannot import accessors at the main module level")
+/g/data/hh5/public/apps/miniconda3/envs/analysis3-24.04/lib/python3.10/site-packages/xarray/backends/plugins.py:80: RuntimeWarning: Engine 'era5' loading failed:
+/lib64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /g/data/hh5/public/apps/miniconda3/envs/analysis3-24.04/lib/python3.10/site-packages/scipy/optimize/_group_columns.cpython-310-x86_64-linux-gnu.so)
+  warnings.warn(f"Engine {name!r} loading failed:\n{ex}", RuntimeWarning)
+/g/data/hh5/public/apps/miniconda3/envs/analysis3-24.04/lib/python3.10/site-packages/xarray/backends/plugins.py:80: RuntimeWarning: Engine 'funwave' loading failed:
+cannot import name 'SpecArray' from 'wavespectra' (/g/data/hh5/public/apps/miniconda3/envs/analysis3-24.04/lib/python3.10/site-packages/wavespectra/__init__.py)
+  warnings.warn(f"Engine {name!r} loading failed:\n{ex}", RuntimeWarning)
+/g/data/hh5/public/apps/miniconda3/envs/analysis3-24.04/lib/python3.10/site-packages/xarray/backends/plugins.py:80: RuntimeWarning: Engine 'furuno' loading failed:
+/lib64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /g/data/hh5/public/apps/miniconda3/envs/analysis3-24.04/lib/python3.10/site-packages/pyproj/../../../libproj.so.25)
+  warnings.warn(f"Engine {name!r} loading failed:\n{ex}", RuntimeWarning)
+/g/data/hh5/public/apps/miniconda3/envs/analysis3-24.04/lib/python3.10/site-packages/xarray/backends/plugins.py:80: RuntimeWarning: Engine 'gamic' loading failed:
+/lib64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /g/data/hh5/public/apps/miniconda3/envs/analysis3-24.04/lib/python3.10/site-packages/pyproj/../../../libproj.so.25)
+  warnings.warn(f"Engine {name!r} loading failed:\n{ex}", RuntimeWarning)
+/g/data/hh5/public/apps/miniconda3/envs/analysis3-24.04/lib/python3.10/site-packages/xarray/backends/plugins.py:80: RuntimeWarning: Engine 'gini' loading failed:
+/lib64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /g/data/hh5/public/apps/miniconda3/envs/analysis3-24.04/lib/python3.10/site-packages/pyproj/../../../libproj.so.25)
+  warnings.warn(f"Engine {name!r} loading failed:\n{ex}", RuntimeWarning)
+/g/data/hh5/public/apps/miniconda3/envs/analysis3-24.04/lib/python3.10/site-packages/xarray/backends/plugins.py:80: RuntimeWarning: Engine 'iris' loading failed:
+/lib64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /g/data/hh5/public/apps/miniconda3/envs/analysis3-24.04/lib/python3.10/site-packages/pyproj/../../../libproj.so.25)
+  warnings.warn(f"Engine {name!r} loading failed:\n{ex}", RuntimeWarning)
+/g/data/hh5/public/apps/miniconda3/envs/analysis3-24.04/lib/python3.10/site-packages/xarray/backends/plugins.py:80: RuntimeWarning: Engine 'ncswan' loading failed:
+/lib64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /g/data/hh5/public/apps/miniconda3/envs/analysis3-24.04/lib/python3.10/site-packages/scipy/optimize/_group_columns.cpython-310-x86_64-linux-gnu.so)
+  warnings.warn(f"Engine {name!r} loading failed:\n{ex}", RuntimeWarning)
+/g/data/hh5/public/apps/miniconda3/envs/analysis3-24.04/lib/python3.10/site-packages/xarray/backends/plugins.py:80: RuntimeWarning: Engine 'ndbc' loading failed:
+/lib64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /g/data/hh5/public/apps/miniconda3/envs/analysis3-24.04/lib/python3.10/site-packages/scipy/optimize/_group_columns.cpython-310-x86_64-linux-gnu.so)
+  warnings.warn(f"Engine {name!r} loading failed:\n{ex}", RuntimeWarning)
+/g/data/hh5/public/apps/miniconda3/envs/analysis3-24.04/lib/python3.10/site-packages/xarray/backends/plugins.py:80: RuntimeWarning: Engine 'ndbc_ascii' loading failed:
+/lib64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /g/data/hh5/public/apps/miniconda3/envs/analysis3-24.04/lib/python3.10/site-packages/scipy/optimize/_group_columns.cpython-310-x86_64-linux-gnu.so)
+  warnings.warn(f"Engine {name!r} loading failed:\n{ex}", RuntimeWarning)
+/g/data/hh5/public/apps/miniconda3/envs/analysis3-24.04/lib/python3.10/site-packages/xarray/backends/plugins.py:80: RuntimeWarning: Engine 'netcdf' loading failed:
+/lib64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /g/data/hh5/public/apps/miniconda3/envs/analysis3-24.04/lib/python3.10/site-packages/scipy/optimize/_group_columns.cpython-310-x86_64-linux-gnu.so)
+  warnings.warn(f"Engine {name!r} loading failed:\n{ex}", RuntimeWarning)
+/g/data/hh5/public/apps/miniconda3/envs/analysis3-24.04/lib/python3.10/site-packages/xarray/backends/plugins.py:80: RuntimeWarning: Engine 'nexradlevel2' loading failed:
+/lib64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /g/data/hh5/public/apps/miniconda3/envs/analysis3-24.04/lib/python3.10/site-packages/pyproj/../../../libproj.so.25)
+  warnings.warn(f"Engine {name!r} loading failed:\n{ex}", RuntimeWarning)
+/g/data/hh5/public/apps/miniconda3/envs/analysis3-24.04/lib/python3.10/site-packages/xarray/backends/plugins.py:80: RuntimeWarning: Engine 'octopus' loading failed:
+/lib64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /g/data/hh5/public/apps/miniconda3/envs/analysis3-24.04/lib/python3.10/site-packages/scipy/optimize/_group_columns.cpython-310-x86_64-linux-gnu.so)
+  warnings.warn(f"Engine {name!r} loading failed:\n{ex}", RuntimeWarning)
+/g/data/hh5/public/apps/miniconda3/envs/analysis3-24.04/lib/python3.10/site-packages/xarray/backends/plugins.py:80: RuntimeWarning: Engine 'odim' loading failed:
+/lib64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /g/data/hh5/public/apps/miniconda3/envs/analysis3-24.04/lib/python3.10/site-packages/pyproj/../../../libproj.so.25)
+  warnings.warn(f"Engine {name!r} loading failed:\n{ex}", RuntimeWarning)
+/g/data/hh5/public/apps/miniconda3/envs/analysis3-24.04/lib/python3.10/site-packages/xarray/backends/plugins.py:80: RuntimeWarning: Engine 'radolan' loading failed:
+/lib64/libstdc++.so.6: version `GLIBCXX_3.4.29' not found (required by /g/data/hh5/public/apps/miniconda3/envs/analysis3-24.04/lib/python3.10/site-packages/scipy/spatial/_ckdtree.cpython-310-x86_64-linux-gnu.so)
+  warnings.warn(f"Engine {name!r} loading failed:\n{ex}", RuntimeWarning)
+/g/data/hh5/public/apps/miniconda3/envs/analysis3-24.04/lib/python3.10/site-packages/xarray/backends/plugins.py:80: RuntimeWarning: Engine 'rainbow' loading failed:
+/lib64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /g/data/hh5/public/apps/miniconda3/envs/analysis3-24.04/lib/python3.10/site-packages/pyproj/../../../libproj.so.25)
+  warnings.warn(f"Engine {name!r} loading failed:\n{ex}", RuntimeWarning)
+/g/data/hh5/public/apps/miniconda3/envs/analysis3-24.04/lib/python3.10/site-packages/xarray/backends/plugins.py:80: RuntimeWarning: Engine 'rasterio' loading failed:
+/lib64/libstdc++.so.6: version `GLIBCXX_3.4.30' not found (required by /g/data/hh5/public/apps/miniconda3/envs/analysis3-24.04/lib/python3.10/site-packages/rasterio/../../../libgdal.so.34)
+  warnings.warn(f"Engine {name!r} loading failed:\n{ex}", RuntimeWarning)
+/g/data/hh5/public/apps/miniconda3/envs/analysis3-24.04/lib/python3.10/site-packages/xarray/backends/plugins.py:80: RuntimeWarning: Engine 'spotter' loading failed:
+/lib64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /g/data/hh5/public/apps/miniconda3/envs/analysis3-24.04/lib/python3.10/site-packages/scipy/optimize/_group_columns.cpython-310-x86_64-linux-gnu.so)
+  warnings.warn(f"Engine {name!r} loading failed:\n{ex}", RuntimeWarning)
+/g/data/hh5/public/apps/miniconda3/envs/analysis3-24.04/lib/python3.10/site-packages/xarray/backends/plugins.py:80: RuntimeWarning: Engine 'swan' loading failed:
+/lib64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /g/data/hh5/public/apps/miniconda3/envs/analysis3-24.04/lib/python3.10/site-packages/scipy/optimize/_group_columns.cpython-310-x86_64-linux-gnu.so)
+  warnings.warn(f"Engine {name!r} loading failed:\n{ex}", RuntimeWarning)
+/g/data/hh5/public/apps/miniconda3/envs/analysis3-24.04/lib/python3.10/site-packages/xarray/backends/plugins.py:80: RuntimeWarning: Engine 'triaxys' loading failed:
+/lib64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /g/data/hh5/public/apps/miniconda3/envs/analysis3-24.04/lib/python3.10/site-packages/scipy/optimize/_group_columns.cpython-310-x86_64-linux-gnu.so)
+  warnings.warn(f"Engine {name!r} loading failed:\n{ex}", RuntimeWarning)
+/g/data/hh5/public/apps/miniconda3/envs/analysis3-24.04/lib/python3.10/site-packages/xarray/backends/plugins.py:80: RuntimeWarning: Engine 'wavespectra' loading failed:
+/lib64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /g/data/hh5/public/apps/miniconda3/envs/analysis3-24.04/lib/python3.10/site-packages/scipy/optimize/_group_columns.cpython-310-x86_64-linux-gnu.so)
+  warnings.warn(f"Engine {name!r} loading failed:\n{ex}", RuntimeWarning)
+/g/data/hh5/public/apps/miniconda3/envs/analysis3-24.04/lib/python3.10/site-packages/xarray/backends/plugins.py:80: RuntimeWarning: Engine 'ww3' loading failed:
+/lib64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /g/data/hh5/public/apps/miniconda3/envs/analysis3-24.04/lib/python3.10/site-packages/scipy/optimize/_group_columns.cpython-310-x86_64-linux-gnu.so)
+  warnings.warn(f"Engine {name!r} loading failed:\n{ex}", RuntimeWarning)
+/g/data/hh5/public/apps/miniconda3/envs/analysis3-24.04/lib/python3.10/site-packages/xarray/backends/plugins.py:80: RuntimeWarning: Engine 'ww3_station' loading failed:
+/lib64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /g/data/hh5/public/apps/miniconda3/envs/analysis3-24.04/lib/python3.10/site-packages/scipy/optimize/_group_columns.cpython-310-x86_64-linux-gnu.so)
+  warnings.warn(f"Engine {name!r} loading failed:\n{ex}", RuntimeWarning)
+/g/data/hh5/public/apps/miniconda3/envs/analysis3-24.04/lib/python3.10/site-packages/xarray/backends/plugins.py:80: RuntimeWarning: Engine 'wwm' loading failed:
+/lib64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /g/data/hh5/public/apps/miniconda3/envs/analysis3-24.04/lib/python3.10/site-packages/scipy/optimize/_group_columns.cpython-310-x86_64-linux-gnu.so)
+  warnings.warn(f"Engine {name!r} loading failed:\n{ex}", RuntimeWarning)
+/g/data/hh5/public/apps/miniconda3/envs/analysis3-24.04/lib/python3.10/site-packages/xarray/backends/plugins.py:80: RuntimeWarning: Engine 'xwaves' loading failed:
+/lib64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /g/data/hh5/public/apps/miniconda3/envs/analysis3-24.04/lib/python3.10/site-packages/scipy/optimize/_group_columns.cpython-310-x86_64-linux-gnu.so)
+  warnings.warn(f"Engine {name!r} loading failed:\n{ex}", RuntimeWarning)
+Traceback (most recent call last):
+  File "/home/561/tp4064/hk25-AusNode-ConvTrop/scripts/calc_anom_olr.py", line 46, in <module>
+    anom = calc_anom_olr(files, var_name, spd)
+  File "/home/561/tp4064/hk25-AusNode-ConvTrop/scripts/calc_anom_olr.py", line 19, in calc_anom_olr
+    ds = xr.open_dataset(files[0])
+  File "/g/data/hh5/public/apps/miniconda3/envs/analysis3-24.04/lib/python3.10/site-packages/xarray/backends/api.py", line 571, in open_dataset
+    backend_ds = backend.open_dataset(
+  File "/g/data/hh5/public/apps/miniconda3/envs/analysis3-24.04/lib/python3.10/site-packages/xarray/backends/netCDF4_.py", line 645, in open_dataset
+    store = NetCDF4DataStore.open(
+  File "/g/data/hh5/public/apps/miniconda3/envs/analysis3-24.04/lib/python3.10/site-packages/xarray/backends/netCDF4_.py", line 375, in open
+    import netCDF4
+  File "/g/data/hh5/public/apps/miniconda3/envs/analysis3-24.04/lib/python3.10/site-packages/netCDF4/__init__.py", line 3, in <module>
+    from ._netCDF4 import *
+ImportError: /lib64/libstdc++.so.6: version `GLIBCXX_3.4.30' not found (required by /g/data/hh5/public/apps/miniconda3/envs/analysis3-24.04/lib/python3.10/site-packages/netCDF4/../../../././libicuuc.so.73)

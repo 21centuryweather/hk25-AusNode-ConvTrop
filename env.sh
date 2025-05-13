@@ -8,7 +8,7 @@ module load conda/analysis3
 source /scratch/nf33/public/hackathon_env/bin/activate
 
 # Root directory for this repo
-export ROOT=/scratch/k10/${USER}/hk25-AusNode-ConvTrop	# Change this to match where you clone this repo
+export ROOT=/home/561/tp4064/hk25-AusNode-ConvTrop	# Change this to match where you clone this repo
 export MODULES=${ROOT}/filter_mode
 
 # Append to our python path
