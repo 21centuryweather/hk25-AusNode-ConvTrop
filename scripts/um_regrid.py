@@ -9,7 +9,7 @@ variable = "ua"
 pressure = 850
 
 zoom = '9'
-file = '/g/data/qx55/germany_node/d3hp003.zarr/PT3H_mean_z' + zoom + '_atm.zarr'
+file = '/g/data/qx55/uk_node/glm.n2560_RAL3p3/data.healpix.PT3H.z' + zoom + '.zarr'
 
 ds2d = xr.open_zarr(file)
 
