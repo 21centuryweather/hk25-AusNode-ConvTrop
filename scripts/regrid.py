@@ -6,7 +6,9 @@ res = 0.25
 res_str = "0p25"
 
 zoom = '10'
-file = '/g/data/qx55/germany_node/d3hp003.zarr/PT3H_mean_z' + zoom + '_atm.zarr'
+file = '/g/data/qx55/uk_node/glm.n2560_RAL3p3/data.healpix.PT3H.z' + zoom + '.zarr'
+pressure = 850
+variable = 'va'
 
 ds2d = xr.open_zarr(file)
 
@@ -23,7 +25,7 @@ def get_nn_lon_lat_index(nside, lons, lats):
         coords=[("lat", lats), ("lon", lons)],
     )
 
-olr = ds2d["rlut"]
+olr = ds2d[variable].sel(pressure = pressure)
 
 nside = hp.get_nside(olr)
 
@@ -35,10 +37,11 @@ cells = get_nn_lon_lat_index(nside, lon, lat)
 olr_regridded = olr.isel(cell=cells)
 olr_regridded = olr_regridded.rename({"lon": "longitude", "lat": "latitude"})
 
-del olr_regridded.attrs["hiopy::time_method"]
-del olr_regridded.attrs["hiopy::nnn"]
-del olr_regridded.attrs["hiopy::enable"]
+# only icon models have this attribute
+# del olr_regridded.attrs["hiopy::time_method"]
+# del olr_regridded.attrs["hiopy::nnn"]
+# del olr_regridded.attrs["hiopy::enable"]
 
-fileo = f"/scratch/gb02/mr4682/data/regridded/ICON/olr.zoom{zoom}.to.{res_str}deg.nc"
+fileo = f"/scratch/gb02/mr4682/data/regridded/UM/{variable}_{pressure}_zoom{zoom}_to_{res_str}deg.nc"
 
 olr_regridded.to_netcdf(path=fileo)

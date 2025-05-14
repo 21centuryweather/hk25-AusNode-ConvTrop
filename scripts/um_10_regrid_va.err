@@ -1,0 +1,58 @@
+Traceback (most recent call last):
+  File "/g/data/hh5/public/apps/miniconda3/envs/analysis3-24.04/lib/python3.10/site-packages/llvmlite/binding/ffi.py", line 136, in __getattr__
+    return self._fntab[name]
+KeyError: 'LLVMPY_AddSymbol'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/g/data/hh5/public/apps/miniconda3/envs/analysis3-24.04/lib/python3.10/site-packages/llvmlite/binding/ffi.py", line 117, in _load_lib
+    self._lib_handle = ctypes.CDLL(str(lib_path))
+  File "/g/data/hh5/public/apps/miniconda3/envs/analysis3-24.04/lib/python3.10/ctypes/__init__.py", line 374, in __init__
+    self._handle = _dlopen(self._name, mode)
+OSError: /lib64/libstdc++.so.6: version `GLIBCXX_3.4.29' not found (required by /g/data/hh5/public/apps/miniconda3/envs/analysis3-24.04/lib/python3.10/site-packages/llvmlite/binding/libllvmlite.so)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/561/tp4064/hk25-AusNode-ConvTrop/scripts/regrid.py", line 13, in <module>
+    ds2d = xr.open_zarr(file)
+  File "/g/data/hh5/public/apps/miniconda3/envs/analysis3-24.04/lib/python3.10/site-packages/xarray/backends/zarr.py", line 1074, in open_zarr
+    guess_chunkmanager(
+  File "/g/data/hh5/public/apps/miniconda3/envs/analysis3-24.04/lib/python3.10/site-packages/xarray/namedarray/parallelcompat.py", line 105, in guess_chunkmanager
+    chunkmanagers = list_chunkmanagers()
+  File "/g/data/hh5/public/apps/miniconda3/envs/analysis3-24.04/lib/python3.10/site-packages/xarray/namedarray/parallelcompat.py", line 69, in list_chunkmanagers
+    return load_chunkmanagers(entrypoints)
+  File "/g/data/hh5/public/apps/miniconda3/envs/analysis3-24.04/lib/python3.10/site-packages/xarray/namedarray/parallelcompat.py", line 87, in load_chunkmanagers
+    available_chunkmanagers = {
+  File "/g/data/hh5/public/apps/miniconda3/envs/analysis3-24.04/lib/python3.10/site-packages/xarray/namedarray/parallelcompat.py", line 88, in <dictcomp>
+    name: chunkmanager()
+  File "/g/data/hh5/public/apps/miniconda3/envs/analysis3-24.04/lib/python3.10/site-packages/xarray/namedarray/daskmanager.py", line 37, in __init__
+    from dask.array import Array
+  File "/home/561/tp4064/.local/lib/python3.10/site-packages/dask/array/__init__.py", line 4, in <module>
+    from dask.array import backends, fft, lib, linalg, ma, overlap, random
+  File "/home/561/tp4064/.local/lib/python3.10/site-packages/dask/array/backends.py", line 8, in <module>
+    from dask.array.core import Array
+  File "/home/561/tp4064/.local/lib/python3.10/site-packages/dask/array/core.py", line 30, in <module>
+    from dask.array.chunk_types import is_valid_array_chunk, is_valid_chunk_type
+  File "/home/561/tp4064/.local/lib/python3.10/site-packages/dask/array/chunk_types.py", line 124, in <module>
+    import sparse
+  File "/g/data/hh5/public/apps/miniconda3/envs/analysis3-24.04/lib/python3.10/site-packages/sparse/__init__.py", line 77, in <module>
+    from ._common import (
+  File "/g/data/hh5/public/apps/miniconda3/envs/analysis3-24.04/lib/python3.10/site-packages/sparse/_common.py", line 8, in <module>
+    import numba
+  File "/g/data/hh5/public/apps/miniconda3/envs/analysis3-24.04/lib/python3.10/site-packages/numba/__init__.py", line 70, in <module>
+    from numba.core import config
+  File "/g/data/hh5/public/apps/miniconda3/envs/analysis3-24.04/lib/python3.10/site-packages/numba/core/config.py", line 17, in <module>
+    import llvmlite.binding as ll
+  File "/g/data/hh5/public/apps/miniconda3/envs/analysis3-24.04/lib/python3.10/site-packages/llvmlite/binding/__init__.py", line 4, in <module>
+    from .dylib import *
+  File "/g/data/hh5/public/apps/miniconda3/envs/analysis3-24.04/lib/python3.10/site-packages/llvmlite/binding/dylib.py", line 36, in <module>
+    ffi.lib.LLVMPY_AddSymbol.argtypes = [
+  File "/g/data/hh5/public/apps/miniconda3/envs/analysis3-24.04/lib/python3.10/site-packages/llvmlite/binding/ffi.py", line 139, in __getattr__
+    cfn = getattr(self._lib, name)
+  File "/g/data/hh5/public/apps/miniconda3/envs/analysis3-24.04/lib/python3.10/site-packages/llvmlite/binding/ffi.py", line 131, in _lib
+    self._load_lib()
+  File "/g/data/hh5/public/apps/miniconda3/envs/analysis3-24.04/lib/python3.10/site-packages/llvmlite/binding/ffi.py", line 125, in _load_lib
+    raise OSError("Could not find/load shared object file") from e
+OSError: Could not find/load shared object file
