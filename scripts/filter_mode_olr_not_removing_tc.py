@@ -8,11 +8,11 @@ from config import *
 
 import filter_mode
 
-files = sorted(glob("/scratch/gb02/mr4682/data/regridded/ICON/olr.anom.zoom10.to.0p25deg.nc"))
+files = sorted(glob("/scratch/gb02/mr4682/data/regridded/UM/olr.zoom10.to.0p25deg.anom.nc"))
 var_name = "rlut"
 spd = 8
 
-diro = "/scratch/gb02/mr4682/data/regridded/ICON/not_removing_tc/"
+diro = "/scratch/gb02/mr4682/data/regridded/UM/not_removing_tc/"
 
 def filter_mode_olr(files, var_name, spd, mode):
     if len(files) == 1:
@@ -39,18 +39,18 @@ def filter_mode_olr(files, var_name, spd, mode):
 
 if __name__ == "__main__":
     olr_moisture_mode = filter_mode_olr(files, var_name, spd, "Moisture Mode")
-    olr_mixed_system = filter_mode_olr(files, var_name, spd, "Mixed System")
-    olr_ig_wave = filter_mode_olr(files, var_name, spd, "IG Wave")
+    #olr_mixed_system = filter_mode_olr(files, var_name, spd, "Mixed System")
+    #olr_ig_wave = filter_mode_olr(files, var_name, spd, "IG Wave")
 
     dso1 = xr.Dataset()
     dso1[f"{var_name}_moisture_mode"] = olr_moisture_mode
     
-    dso2 = xr.Dataset()
-    dso2[f"{var_name}_mixed_system"] = olr_mixed_system
+    #dso2 = xr.Dataset()
+    #dso2[f"{var_name}_mixed_system"] = olr_mixed_system
     
-    dso3 = xr.Dataset()
-    dso3[f"{var_name}_ig_wave"] = olr_ig_wave
+    #dso3 = xr.Dataset()
+    #dso3[f"{var_name}_ig_wave"] = olr_ig_wave
 
-    dso1.to_netcdf(path=f"{diro}olr.moisture.mode.zoom10.to.0p25deg.nc", format="NETCDF4")
-    dso2.to_netcdf(path=f"{diro}olr.mixed.system.zoom10.to.0p25deg.nc", format="NETCDF4")
-    dso3.to_netcdf(path=f"{diro}olr.ig.wave.zoom10.to.0p25deg.nc", format="NETCDF4")
+    dso1.to_netcdf(path=f"{diro}olr.zoom10.to.0p25deg.moisture.mode.nc", format="NETCDF4")
+    #dso2.to_netcdf(path=f"{diro}olr.zoom10.to.0p25deg.mixed.system.nc", format="NETCDF4")
+    #dso3.to_netcdf(path=f"{diro}olr.zoom10.to.0p25deg.ig.wave.nc", format="NETCDF4")
