@@ -14,7 +14,7 @@ warnings.filterwarnings('ignore', category=RuntimeWarning, append=True)
 warnings.filterwarnings('ignore', category=FutureWarning, append=True)
 warnings.filterwarnings('ignore',category=pd.io.pytables.PerformanceWarning)
 
-mode = "Moisture Mode"
+mode = "Mixed System"
 
 diri = "/scratch/gb02/mr4682/data/regridded/UM/not_removing_tc/"
 

@@ -1,0 +1,3 @@
+Loading conda/analysis3-25.02
+  Loading requirement: singularity
+FATAL:   container creation failed: mount /proc/self/fd/10->/opt/nci/singularity/3.11.3/var/singularity/mnt/session/overlay-images/0 error: while mounting image /proc/self/fd/10: failed to find loop device: could not attach image file to loop device: failed to attach loop device: transient error, please retry: resource temporarily unavailable
