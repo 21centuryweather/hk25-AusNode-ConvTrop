@@ -1,0 +1,4 @@
+Loading conda/analysis3-25.02
+  Loading requirement: singularity
+/scratch/k10/mr4682/hk25-AusNode-ConvTrop/filter_mode/track.py:52: RuntimeWarning: Mean of empty slice
+  activity[i] = np.nanmean(field_ref_n[i, lat_i_index-int(margin / grid_res):lat_i_index+int(margin / grid_res)+1, lon_i_index-int(margin / grid_res):lon_i_index+int(margin / grid_res)+1])

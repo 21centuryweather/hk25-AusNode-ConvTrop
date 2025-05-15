@@ -14,7 +14,7 @@ warnings.filterwarnings('ignore', category=RuntimeWarning, append=True)
 warnings.filterwarnings('ignore', category=FutureWarning, append=True)
 warnings.filterwarnings('ignore',category=pd.io.pytables.PerformanceWarning)
 
-mode = "Mixed System"
+mode = "IG Wave"
 
 diri = "/scratch/gb02/mr4682/data/regridded/UM/not_removing_tc/"
 
@@ -37,23 +37,28 @@ elif mode == "Tropical Cyclone":
 else:
     sys.exit(f"There is no mode named {mode}!")
 
-filei = f"olr.zoom10.to.0p25deg.{mode_str}.nc"
+filei = f"olr.zoom10.to.0p25deg.{mode_str}"
 
 diro = "/scratch/gb02/mr4682/data/regridded/UM/tracks/"
 fileo = f"Track.{filei}.csv"
 
-ds = xr.open_dataset(f"{diri}{filei}")
+time_start = "2020-01-20 00:00:00"
+time_end = "2021-04-01 00:00:00"
 
-time = ds["time"]
+ds = xr.open_dataset(f"{diri}{filei}.nc")
+
+time = ds["time"].sel(time=slice(time_start, time_end))
 latitude = ds["latitude"]
 longitude = ds["longitude"]
 
-olr = ds[f"rlut_{mode_var_name}"].compute()
+olr = ds[f"rlut_{mode_var_name}"].sel(time=slice(time_start, time_end)).compute()
 
 olr_stddev = olr.std(ddof=1)
 
 olr_standardised = olr / olr_stddev
 olr_standardised = olr_standardised.fillna(0.0)
+
+print(olr_standardised)
 
 dxy = np.radians(longitude.values[1] - longitude.values[0]) * 6.371e+06
 dt = (time.values[1] - time.values[0]) / np.timedelta64(1, "s")
