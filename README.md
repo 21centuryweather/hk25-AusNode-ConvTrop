@@ -29,21 +29,23 @@ name, affiliation/github username
 
 > Lorem ipsum dolor sit amet 
 
-A python virtual environment has been set up for working on this project. To use the virtual environment, run the following commands everytime you log into `gadi`.
+A python virtual environment has been set up for working on this project. To be able to use the virtual environment in Jupyter notebooks, run the following commands in your `gadi` terminal **the first time** you want to use it.
 
 ```
 module use /g/data/xp65/public/modules
+
 module load conda/analysis3-25.02
+
 source /scratch/gb02/mr4682/tobac_env/bin/activate
-```
 
-To close the virtual environment, run this command.
+python3 -m ipykernel install --user --name tobac_env --display-name "hackathon + tobac"
 
-```
 deactivate
 ```
 
-This virtual environment contains all the necessary packages for this project, including `healpy`, `easygems`, and [`tobac`](https://tobac.readthedocs.io/en/latest/), as well as the fundamental libraries like `numpy` and `xarray`.
+A kernel named `hackathon + tobac` will appear in your next Jupyterlab session. Using this kernel enables you to import the [`tobac`](https://tobac.readthedocs.io/en/latest/) module.
+
+This virtual environment contains all the necessary packages for this project, including `healpy`, `easygems`, and `tobac`, as well as the fundamental libraries like `numpy` and `xarray`.
 
 ### Project organisation
 

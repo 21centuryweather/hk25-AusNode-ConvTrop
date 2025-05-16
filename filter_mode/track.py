@@ -1,6 +1,7 @@
 import numpy as np
 import pandas as pd
 import xarray as xr
+import scipy
 from glob import glob
 
 from config import *
@@ -71,13 +72,13 @@ def stackTLL(field, track, max_activity, lat, lon, season, domain, x_size, y_siz
 
     if domain == "EQ":
         max_activity_in_domain = max_activity_in_season.loc[(max_activity_in_season["latitude"] > -10.0) & (max_activity_in_season["latitude"] < 10.0)]
-        long_name = "Instances of Equatorial " + field.attrs["long_name"] + " (" + season + ")" + sector_long_name
+        long_name = "Instances of Equatorial " + field.attrs["long_name"] + " (" + season + ")"
     elif domain == "NH":
         max_activity_in_domain = max_activity_in_season.loc[(max_activity_in_season["latitude"] >= 10.0) & (max_activity_in_season["latitude"] <= 20.0)]
-        long_name = "Instances of Northern Hemisphere " + field.attrs["long_name"] + " (" + season + ")" + sector_long_name
+        long_name = "Instances of Northern Hemisphere " + field.attrs["long_name"] + " (" + season + ")"
     elif domain == "SH":
         max_activity_in_domain = max_activity_in_season.loc[(max_activity_in_season["latitude"] >= -20.0) & (max_activity_in_season["latitude"] <= -10.0)]
-        long_name = "Instances of Southern Hemisphere " + field.attrs["long_name"] + " (" + season + ")" + sector_long_name
+        long_name = "Instances of Southern Hemisphere " + field.attrs["long_name"] + " (" + season + ")"
 
     n_Features = len(max_activity_in_domain["timestr"].values)
 
@@ -117,6 +118,7 @@ def stackTLL(field, track, max_activity, lat, lon, season, domain, x_size, y_siz
 
                 lat_i_lag_index = np.argmin(np.abs(lat3 - lat_i_lag))
                 lon_i_lag_index = np.argmin(np.abs(lon3 - lon_i_lag))
+                print(f"i = {i}, lag = {lag}, (lat, lon) = ({lat_i_lag}, {lon_i_lag}), (lat_index, lon_index) = ({lat_i_lag_index}, {lon_i_lag_index})")
 
                 instances[i, lag + lagmax, :, :] = field_i[max_activity_index + lag, lat_i_lag_index-int(y_size/grid_res):lat_i_lag_index+int(y_size/grid_res)+1, lon_i_lag_index-int(x_size/grid_res):lon_i_lag_index+int(x_size/grid_res)+1]
 
@@ -146,13 +148,13 @@ def stackTLLL(field, track, max_activity, lat, lon, season, domain, x_size, y_si
 
     if domain == "EQ":
         max_activity_in_domain = max_activity_in_season.loc[(max_activity_in_season["latitude"] > -10.0) & (max_activity_in_season["latitude"] < 10.0)]
-        long_name = "Instances of Equatorial " + field.attrs["long_name"] + " (" + season + ")" + sector_long_name
+        long_name = "Instances of Equatorial " + field.attrs["long_name"] + " (" + season + ")"
     elif domain == "NH":
         max_activity_in_domain = max_activity_in_season.loc[(max_activity_in_season["latitude"] >= 10.0) & (max_activity_in_season["latitude"] <= 20.0)]
-        long_name = "Instances of Northern Hemisphere " + field.attrs["long_name"] + " (" + season + ")" + sector_long_name
+        long_name = "Instances of Northern Hemisphere " + field.attrs["long_name"] + " (" + season + ")"
     elif domain == "SH":
         max_activity_in_domain = max_activity_in_season.loc[(max_activity_in_season["latitude"] >= -20.0) & (max_activity_in_season["latitude"] <= -10.0)]
-        long_name = "Instances of Southern Hemisphere " + field.attrs["long_name"] + " (" + season + ")" + sector_long_name
+        long_name = "Instances of Southern Hemisphere " + field.attrs["long_name"] + " (" + season + ")"
 
     n_Features = len(max_activity_in_domain["timestr"].values)
 
